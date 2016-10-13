@@ -1,6 +1,11 @@
 # PokemonGoSP
 Android application to show all spawn point as a overlay
 
+### Note
+1. Besause of the performance issue spawnpoint only show under zoom level > 16
+2. Long press the map will create a 200m range circle (i.e. your sight in game)
+3. press the bottom right button to open the overlay, it will close when you open the app again (maybe add a drag to remove function later, maybe...)
+
 ### Support Location
 **Hong Kong**
 - Causeway Bay
