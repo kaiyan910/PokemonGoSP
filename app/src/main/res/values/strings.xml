@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PokemonGoSP</string>
+
+    <string name="notification.message">開啟程式</string>
+
+    <string name="widget.error.message">請接受權限要求</string>
+
+    <string name="popup.spawnTime">出怪時間: %1$s - %2$s</string>
+    <string name="popup.expireTime">餘下時間: %s</string>
+
+    <string name="data.loading.title">載入精靈出現點</string>
+    <string name="data.loading.message">請稍等&#8230;</string>
+</resources>
