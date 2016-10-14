@@ -23,7 +23,7 @@ public class Spawn {
 
     @SerializedName("id")
     @DatabaseField(id = true)
-    private Long id;
+    private String id;
     @SerializedName("lat")
     @DatabaseField(columnName = COLUMN_LATITUDE)
     private double latitude;
@@ -49,11 +49,11 @@ public class Spawn {
 
     private SpawnStatus spawnStatus;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -75,7 +75,7 @@ public class MarkerWrapper {
 
         if (!event.getBounds().contains(spawn.getLatLng())) {
 
-            LogUtils.debug(this, "spawn out of bounds=[%d]", spawn.getId());
+            LogUtils.debug(this, "spawn out of bounds=[%s]", spawn.getId());
 
             mOttoBus.post(new RemoveSpawnEvent(this));
             mOttoBus.unregister(this);

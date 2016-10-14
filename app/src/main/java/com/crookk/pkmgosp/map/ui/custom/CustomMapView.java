@@ -69,7 +69,7 @@ public class CustomMapView extends RelativeLayout implements SpawnView, OnMapRea
 
     private SearchCircle mFocusPoint = new SearchCircle();
     private GoogleMap mGoogleMap;
-    private LongSparseArray<MarkerWrapper> mSpawnMarker = new LongSparseArray<>();
+    private Map<String, MarkerWrapper> mSpawnMarker = new HashMap<>();
     private Map<Marker, MarkerWrapper> mMarkerMap = new HashMap<>();
 
     private boolean mMapCreated = false;
@@ -175,6 +175,8 @@ public class CustomMapView extends RelativeLayout implements SpawnView, OnMapRea
     @UiThread
     @Override
     public void onSpawnListReceived(List<Spawn> spawnList) {
+
+        LogUtils.debug(this, "spawnList=[%d]", spawnList.size());
         if (spawnList.size() > 0) drawSpawnPoint(mGoogleMap, spawnList);
     }
 
@@ -244,12 +246,12 @@ public class CustomMapView extends RelativeLayout implements SpawnView, OnMapRea
 
         for (Spawn spawn : spawnList) {
 
-            if (mSpawnMarker.indexOfKey(spawn.getId()) < 0) {
+            if (!mSpawnMarker.containsKey(spawn.getId())) {
 
                 MarkerWrapper model = MarkerWrapper_.getInstance_(getContext());
                 model.init(map, spawn);
 
-                mSpawnMarker.append(spawn.getId(), model);
+                mSpawnMarker.put(spawn.getId(), model);
                 mMarkerMap.put(model.getMarker(), model);
             }
         }
